@@ -39,6 +39,7 @@ aliases:
 * BUGFIX: [vmoperator](https://docs.victoriametrics.com/operator/): previously StatefulSet/Deployment/DaemonSet rollouts could proceed in parallel, now pods are rolled out sequentially. See [#1693](https://github.com/VictoriaMetrics/operator/issues/1693).
 * BUGFIX: [config-reloader](https://github.com/VictoriaMetrics/operator/tree/master/cmd/config-reloader): previously `--only-init-config` still kept the reloader running background watchers; now it exits after the initial config update so the pod terminates as expected. See [#1785](https://github.com/VictoriaMetrics/operator/issues/1785).
 * BUGFIX: [vmoperator](https://docs.victoriametrics.com/operator/): previously, recreating a resource after deletion could hang and block updates; now resource recreation completes normally. See [#1707](https://github.com/VictoriaMetrics/operator/issues/1707).
+* BUGFIX: [vmalertmanagerconfig](https://docs.victoriametrics.com/operator/resources/vmalertmanagerconfig/): before spec.route and spec.receivers were required; now both parameters are optional to align with prometheus operator. See [#1800](https://github.com/VictoriaMetrics/operator/issues/1800).
 
 ## [v0.67.0](https://github.com/VictoriaMetrics/operator/releases/tag/v0.67.0)
 **Release date:** 23 January 2026
